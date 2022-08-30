@@ -1,0 +1,17 @@
+{
+  "name": "@remix-run/channel",
+  "version": "0.0.0",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup --config rollup.config.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^2.78.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-esbuild": "^4.10.1"
+  }
+}
