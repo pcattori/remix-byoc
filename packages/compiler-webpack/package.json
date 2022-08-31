@@ -1,0 +1,26 @@
+{
+  "name": "@remix-run/compiler-webpack",
+  "version": "0.0.0",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup --config rollup.config.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/webpack-node-externals": "^2.5.3",
+    "rollup": "^2.78.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-esbuild": "^4.10.1"
+  },
+  "dependencies": {
+    "esbuild": "^0.15.6",
+    "esbuild-loader": "^2.19.0",
+    "webpack": "^5.74.0",
+    "webpack-merge": "^5.8.0",
+    "webpack-node-externals": "^3.0.0",
+    "webpack-virtual-modules": "^0.4.4"
+  }
+}
