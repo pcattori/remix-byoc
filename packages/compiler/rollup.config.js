@@ -1,4 +1,4 @@
-import path from "path"
+import path from "path";
 
 import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
