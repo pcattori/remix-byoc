@@ -34,5 +34,24 @@ export default function rollup() {
         format: "es",
       },
     },
+    {
+      external: (id) => isBareModuleId(id),
+      input: "src/webpack-config/browser-routes-loader.ts",
+      plugins: [esbuild()],
+      output: {
+        dir: "dist",
+        format: "cjs",
+        exports: "default",
+      },
+    },
+    {
+      input: "src/webpack-config/empty-module-loader.ts",
+      plugins: [esbuild()],
+      output: {
+        dir: "dist",
+        format: "cjs",
+        exports: "default",
+      },
+    },
   ];
 }

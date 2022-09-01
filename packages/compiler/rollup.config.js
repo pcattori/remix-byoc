@@ -7,6 +7,7 @@ import esbuild from "rollup-plugin-esbuild";
 const isBareModuleId = (id) =>
   !id.startsWith(".") && !path.isAbsolute(id);
 
+
 /** @returns {import("rollup").RollupOptions[]} */
 export default function rollup() {
   return [
@@ -17,7 +18,7 @@ export default function rollup() {
         esbuild(),
         copy({
           targets: [
-            { src: "package.json", dest: "dist" },
+            { src: "package.json", dest: "dist"},
           ],
         }),
       ],

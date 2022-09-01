@@ -1,19 +1,19 @@
-import path from 'path';
+import path from "path";
 
-import * as fse from 'fs-extra';
-import WebSocket from 'ws';
+import * as fse from "fs-extra";
+import WebSocket from "ws";
 
-import { type RemixConfig } from '@remix-run/dev/dist/config';
+import { type RemixConfig } from "@remix-run/dev/dist/config";
 import {
   type BrowserCompiler,
   type CreateCompiler,
   type ServerCompiler,
   watch,
-} from '@remix-run/compiler';
+} from "@remix-run/compiler";
 
-import exitHook from './vendor/exit-hook';
-import prettyMs from './vendor/pretty-ms';
-import { makeChannel } from '@remix-run/channel';
+import exitHook from "./vendor/exit-hook";
+import prettyMs from "./vendor/pretty-ms";
+import { makeChannel } from "./utils/channel";
 
 const relativePath = (file: string) => path.relative(process.cwd(), file);
 
@@ -40,17 +40,17 @@ export async function liveReload(
   function log(message: string) {
     message = `💿 ${message}`;
     console.log(message);
-    broadcast({ type: 'LOG', message });
+    broadcast({ type: "LOG", message });
   }
 
   const dispose = await watch(config, createCompiler, {
     onInitialBuild: callbacks.onInitialBuild,
     onRebuildStart() {
-      log('Rebuilding...');
+      log("Rebuilding...");
     },
     onRebuildFinish(durationMs: number) {
       log(`Rebuilt in ${prettyMs(durationMs)}`);
-      broadcast({ type: 'RELOAD' });
+      broadcast({ type: "RELOAD" });
     },
     onFileCreated(file) {
       log(`File created: ${relativePath(file)}`);

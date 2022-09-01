@@ -1,6 +1,6 @@
-import type { AssetsManifest } from '@remix-run/dev/dist/compiler/assets';
-import { RemixConfig } from '@remix-run/dev/dist/config';
-import { ReadChannel, WriteChannel } from '@remix-run/channel';
+import type { AssetsManifest } from "@remix-run/dev/dist/compiler/assets";
+import { RemixConfig } from "@remix-run/dev/dist/config";
+import { ReadChannel, WriteChannel } from "./utils/channel";
 
 export interface BrowserCompiler {
   // produce ./public/build/

@@ -4,8 +4,7 @@ import copy from "rollup-plugin-copy";
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
 
-const isBareModuleId = (id) =>
-  !id.startsWith(".") && !path.isAbsolute(id);
+const isBareModuleId = (id) => !id.startsWith(".") && !path.isAbsolute(id);
 
 /** @returns {import("rollup").RollupOptions[]} */
 export default function rollup() {
